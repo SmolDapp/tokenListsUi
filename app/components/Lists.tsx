@@ -1,7 +1,6 @@
 'use client';
 
 import {Fragment, useMemo, useState} from 'react';
-import Link from 'next/link';
 import {useRouter} from 'next/navigation';
 import * as chains from 'wagmi/chains';
 import axios from 'axios';
@@ -16,8 +15,6 @@ import type {ReactElement} from 'react';
 import type {TNDict} from '@builtbymom/web3/types';
 import type {TTokenListItem, TTokenListSummary} from '@/utils/types/types';
 
-import {BackgroundPatternAnimated} from '@/app/components/BackgroundPatternAnimated';
-import HappyIcon from '@/app/components/icons/Happy';
 import TokenListHero from '@/app/components/TokenListHero';
 import {TokenListTable} from '@/app/components/TokenListTable';
 import LEGACY_TOKEN_LISTS from '@/utils/legacyTokenLists';
@@ -208,45 +205,6 @@ function Lists(): ReactElement {
 	return (
 		<Fragment>
 			<TokenListHero summary={summary} />
-
-			<div className={'mx-auto mb-10 grid w-full max-w-5xl'}>
-				<div className={' relative overflow-hidden rounded-lg !bg-[#FF401A] p-4 md:p-10'}>
-					<BackgroundPatternAnimated />
-					<div className={'relative z-50 flex w-full flex-row items-center gap-10'}>
-						<HappyIcon className={'size-52'} />
-						<div className={'rounded-lg bg-white p-4 shadow-lg'}>
-							<h2 className={'pb-4 text-xl font-medium'}>
-								{'TokenRegistry: Onchain Trust for Every Token'}
-							</h2>
-							<div className={'text-sm leading-relaxed'}>
-								<p className={'pb-2'}>
-									{
-										'Submit and verify your token fully on-chain with TokenRegistry, featuring standardized metadata, governance-based approval, and permanent IPFS storage.'
-									}
-								</p>
-								<p>
-									{
-										'Built to power Tokenlistooor and support the broader Web3 ecosystem with transparent, reliable token data.'
-									}
-								</p>
-							</div>
-							<div className={'mt-6 flex w-full justify-center'}>
-								<Link
-									href={'https://tokenregistry.net'}
-									target={'_blank'}
-									className={'w-full'}>
-									<button
-										className={
-											'rounded-xs focus-visible:ring-[#FF401A]-light disabled:bg-separator disabled:text-subtle dark:ring-offset-neutral-950 inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap bg-[#FF401A]/20 px-4 py-2 text-sm font-medium text-[#FF401A] ring-offset-white transition-colors hover:bg-[#FF401A]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed dark:focus-visible:ring-neutral-300 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0'
-										}>
-										{'Move OnChain'}
-									</button>
-								</Link>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 
 			<div className={'mx-auto mt-2 flex w-full max-w-5xl grid-cols-2 flex-col-reverse md:grid'}>
 				<div className={'flex flex-row items-center'}>
